@@ -1,0 +1,435 @@
+/* Универсальный селектор */
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+}
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/* menu style start */
+.menu{
+    width: 500px;
+    margin: 0 auto;
+}
+/* Дочерний селектор */
+.menu>li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu>li>ol {
+    position: absolute;
+    padding-left: 0;
+    display: none;
+}
+
+.menu>li:hover>ol {
+    display: block;
+}
+/* Вложенный селектор */
+.menu a {
+    display: block;
+    color: aqua;
+    background-color: rgb(0, 0, 204);
+    width: 110px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.menu a:hover{
+    background-color: rgb(0, 0, 146);
+    color:#00ff9d;
+}
+/* menu style end */
+/* article style start */
+.blog{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+aside{
+    order: -1;
+}
+article, aside{
+    flex-basis: 300px;
+}
+article{
+    padding: 20px;
+    flex-grow: 1;
+}
+article img{
+    width: 250px;
+    height: auto;
+    float: left;
+    margin-right: 15px;
+}
+.clear-both{
+    clear: both; 
+    margin-top: 50px;
+}
+@media screen and (max-width: 850px){
+    .blog{
+        flex-direction: column;
+    }
+    aside{
+        order: 0;
+    }
+}
+/* article style end */
+/* contact style start */
+.contact{
+    /* position: relative;  */
+    /* position: fixed; */
+    position: sticky;
+    top: 10px;
+    left: 85%;
+    width: 50px;
+    height: 50px;
+    background-size: 50px;
+    background-image: url('../images/contact.jpg');
+}
+.contact>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.contact::before{
+    position: absolute;
+    content: "";
+    border: 15px solid transparent;
+    border-top: 15px solid #735ff2;
+    top: 50px;
+    left: 10px;
+
+}
+/* contact style end */
+/* for images style start*/
+#four_images{
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+/* Родственный селектор */
+label~img{
+    width: 200px;
+    display: block;
+}
+#switch:checked~img{
+    display: none;
+}
+/* Соседний селектор */
+label+img+img+img{
+    border-radius: 100%;
+}
+/* four images style end*/
+/* селектор атрибута*/ 
+q[title]{
+    color: blue;
+}
+q[title='Цитата 3.']{
+    color: darkgreen;
+}
+a[href ^= 'https']{
+    color: red;
+}
+a[href $= '.com']{
+    color: greenyellow;
+}
+a[href *= 'github']{
+    color:hotpink;
+}
+h2[class ~= 'big']{
+    color: darkblue;
+}
+p[class |= 'text']{
+    text-align: justify;
+}
+
+.lap{
+    color: red;
+}
+.show{
+    color: blue !important;
+}
+label{
+    color: yellow;
+}
+#check{
+    color:green;
+}
+
+/* skills styles start */
+.skills{
+    display: flex;
+    min-height: 500px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+
+}
+div[class |= 'skill']{
+    flex-basis: 250px;
+}
+.skill-1{
+    text-align: center;
+}
+.skill-1>img{
+    width: 50px;
+    height: 45px;
+}
+.skill-2{
+    text-align: right;
+    background-color: darkblue;
+    color:white;
+    padding: 30px;
+    background-image: url('../images/images/skill_icon.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 120px 35px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.skill-2>p{
+    border-top: 3px solid white;
+    padding-top: 10px;
+}
+.skill-3{
+    align-self: center;
+    height: 300px;
+}
+.skill-3>a>img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/* skills styles end */
+/* cart-box style start */
+.cart-box{
+    width: 80%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-areas: 'a a b' 'c d e ';
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    /* grid-column-gap: 5px;
+    grid-row-gap: 10px;     */
+    grid-gap: 10px;
+
+}
+div[class |= 'cart']{
+    background-color: gold;
+    border: 5px solid orange;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 8px 8px 8px -2px gray;
+}
+.cart-1{
+    grid-area: a;
+}
+.cart-1>a{
+    display: inline-block;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.cart-1>a>img{
+    width: 100%;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+.cart-1>a:hover img{
+    transform: scale(1.3);
+
+}
+@media screen and (max-width:900px){
+    .cart-box{
+        width: 100%;
+        grid-template-areas: 'a' 'b' 'c' 'd' 'e';
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+    }
+}
+/* card-carusel style start */
+.card-carusel{
+    width: 80%;
+    padding-left: 300px;
+}
+.card>img{
+    width: 120px;
+    height: 80px;
+}
+.carousel-control-prev-icon{
+    background-image: url('../images/card/left-arrow.svg');
+}
+.carousel-control-next-icon{
+    background-image: url('../images/card/right.svg');
+}
+.carousel-control-prev {
+    left: -105px;
+}
+.mybox>div[class |= "col"]{
+    border: 1px solid black;
+    background: green;
+}
+.test>div{
+    height: 300px;
+}
+@media screen and (max-width:800px){
+    .new{
+        order: -1;
+    }
+}
+/* table style start */
+.table-rating{
+    width: 90vw;
+    margin: 50px auto;
+    color: grey;
+    border-collapse: collapse;
+}
+.table-rating th, .table-rating td{
+    border: 3px  solid grey;
+    text-align: center;
+}
+.table-rating img{
+    width: 50px;
+}
+.table-rating tbody{
+    background-color: rgb(54, 54, 54);
+    cursor: pointer;
+}
+.table-rating thead, .table-rating tfoot, .table-rating tr:hover{
+    background-color: black;
+}
+.table-rating caption{
+    width: 90vw;
+    height: 100px;
+    background-color: black;
+    background-image: url('../table/table_header.jpg');
+    background-size: 300px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+/* table style end */
+.form-poll{
+    width: 850px;
+    margin: 10px auto;
+    background: radial-gradient(60% 30%, aqua, blue);
+    border-radius: 10px;
+    box-shadow: 5px 5px 6px 0px grey;
+    padding: 20px;
+    color: rgb(173, 255, 255);
+    
+}
+.h2{
+    color: azure;
+    text-shadow: 3px 3px 0px black;
+}
+.form-poll__data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.capcha>img{
+    width: 100px;
+}
+.capcha__span{
+    position: relative;
+}
+.capcha__span::after{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+.capcha__false{
+    margin-left: 30px;
+    color: red;
+}
+.capcha__check:valid + .capcha__span::after{
+    content:url('../images/form/ok.png');
+}
+.capcha__check:invalid + .capcha__span::after{
+    content:url('../images/form/nook.png');
+}
+.capcha__check:valid ~ .capcha__false{
+    display: none;
+}
+.anim-message{
+    position: relative;
+    width: 280px;
+    margin: 50px auto;
+    text-align: center;
+    height: 300px;
+}
+.anim-message__bg, .anim-message>a{
+    position: absolute;
+}
+.anim-message>a{
+    top: 13px;
+    left: 15px;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: aqua;
+    width: 250px;
+}
+.anim-message__side-1{
+    opacity: 1;
+    animation: side-1 5s infinite;
+}
+.anim-message__side-2{
+    opacity: 0;
+    animation: side-2 5s infinite;
+}
+.anim-message__bg{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, green 30%, yellowgreen 70%);
+    animation: anim-BG 5s infinite;
+}
+@keyframes anim-BG{
+    50%{
+        transform: rotateX(180deg);
+    }
+}
+@keyframes side-1{
+    10%{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    80%{
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    
+}
+@keyframes side-2{
+    30%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    40%{
+        transform: translateY(-10px);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    70%{
+        opacity: 0;
+    }
+}
