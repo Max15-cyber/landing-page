@@ -370,7 +370,7 @@ div[class |= 'cart']{
     width: 280px;
     margin: 50px auto;
     text-align: center;
-    height: 300px;
+    height: 100px;
 }
 .anim-message__bg, .anim-message>a{
     position: absolute;
@@ -432,4 +432,9 @@ div[class |= 'cart']{
     70%{
         opacity: 0;
     }
+}
+.wrap-calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

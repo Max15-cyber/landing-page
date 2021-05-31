@@ -33,12 +33,25 @@
                     <a href="#"><img src="../images/landing_page/twitter.png" alt="Twitter"></a>
                     <a href="#"><img src="../images/landing_page/Medium_icon.png" alt="Medium"></a>
                 </div>
-                <div class="started">
-                    <a href="#">Get started</a>
+                <div>
+                    <button class="started" id="started">Get started</button>
                 </div>
             </div>
         </div>
     </header>
+    <div class="modal-form d-none" id="modal-form">
+        <form action="" class="form-login">
+            <h4 class="form-login__title">Регистрация</h4>
+            <div class="form-login__body">
+                <input type="text" name="userName" placeholder="Имя" class="form-login__input">
+                <input type="text" name="userSurname" placeholder="Фамилия" class="form-login__input">
+                <input type="text" name="userLogin" placeholder="Логин" class="form-login__input">
+                <input type="password" name="userPassword" placeholder="Пароль" class="form-login__input">
+            </div>
+            <span id="close-form" class="close-form">&#10008;</span>
+            <div class='send-div'><button class="send" type="submit">Отправить</button></div>
+        </form>
+    </div>
     <div class="cover"></div>
     <div class="visual-section visual-section-1"></div>
     <div class="visual-section visual-section-2"></div>
@@ -76,7 +89,8 @@
                         </a>
                     </p>
                     <h5 class="about__h5"><a href="#">Files</a></h5>
-                    <p class="about__text"><a href="#">No vim nulla vitae intellegat. Ei enim error ius, solet atomorum conceptam ex has.</a></p>
+                    <p class="about__text"><a href="#">No vim nulla vitae intellegat. Ei enim error ius, solet atomorum
+                            conceptam ex has.</a></p>
                 </div>
                 <div class="column-3">
                     <p class="about__img">
@@ -85,7 +99,8 @@
                         </a>
                     </p>
                     <h5 class="about__h5"><a href="#">Meeting chats</a></h5>
-                    <p class="about__text"><a href="#">Vim ne tacimates neglegentur. Erat diceret omittam at est.</a></p>
+                    <p class="about__text"><a href="#">Vim ne tacimates neglegentur. Erat diceret omittam at est.</a>
+                    </p>
                 </div>
                 <div class="column-4">
                     <p class="about__img">
@@ -104,6 +119,33 @@
             </p>
         </div>
     </div>
+    <section class = "slider">
+        <ul class="slides" id="slides">
+            <li class="slide showing"><a href="#"></a></li>
+            <li class="slide"><a href="#"></a></li>
+            <li class="slide"><a href="#"></a></li>
+            <li class="slide"><a href="#"></a></li>
+            <li class="slide"><a href="#"></a></li>
+        </ul>
+        <span id="arrow-prev" class="toggle-arrow arrow-prev wrap">&larr;</span>
+        <span id="arrow-next" class="toggle-arrow arrow-next wrap">&rarr;</span>
+        <div class="toggle-radio" id="toggle-radio">
+            <input type="radio" name="rad" value="0" checked>
+            <input type="radio" name="rad" value="1">
+            <input type="radio" name="rad" value="2">
+            <input type="radio" name="rad" value="3">
+            <input type="radio" name="rad" value="4">
+        </div>
+        <ul id="slides-mini" class="slides-mini">
+            <li class="slide-mini showing-mini" ><img data-id="0" src="../images/slider_images/depositphotos_188003464-stock-photo-bangkok.jpg" alt="1"></li>
+            <li class="slide-mini" ><img data-id="1" src="../images/slider_images/second.jpg" alt="2"></li>
+            <li class="slide-mini" ><img data-id="2" src="../images/slider_images/third.jpg" alt="3"></li>
+            <li class="slide-mini" ><img data-id="3" src="../images/slider_images/fourth.jpg" alt="4"></li>
+            <li class="slide-mini" ><img data-id="4" src="../images/slider_images/fifth.jpg" alt="5"></li>
+        </ul>
+    </section>
+    <div class="hh"></div>
+    <script src="./script/index.js"></script>
 </body>
 
 </html>
