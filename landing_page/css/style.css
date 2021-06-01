@@ -142,11 +142,13 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-.wrap{
+
+.wrap {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .logo {
     width: 26px;
     height: 26px;
@@ -652,7 +654,7 @@ nav {
     transition: 1s;
 }
 
-.toggle-arrow{
+.toggle-arrow {
     position: absolute;
     top: 40%;
     z-index: 3;
@@ -665,13 +667,16 @@ nav {
     padding-bottom: 5px;
     cursor: pointer;
 }
-.arrow-prev{
+
+.arrow-prev {
     left: 5px;
 }
-.arrow-next{
+
+.arrow-next {
     right: 10px;
 }
-.toggle-radio{
+
+.toggle-radio {
     position: absolute;
     left: 0;
     bottom: 10px;
@@ -680,7 +685,8 @@ nav {
     justify-content: center;
     z-index: 3;
 }
-.slides-mini{
+
+.slides-mini {
     position: absolute;
     bottom: -100px;
     width: 100%;
@@ -689,18 +695,73 @@ nav {
     grid-template-rows: 1fr;
     grid-gap: 10px;
 }
-.slide-mini{
+
+.slide-mini {
     font-size: 0;
 }
-.slide-mini>img{
+
+.slide-mini>img {
     width: 100%;
     height: 75px;
 }
-.showing-mini{
+
+.showing-mini {
     box-shadow: 0 0 5px 5px rgb(255, 208, 0);
 }
-.hh{
+
+.hh {
     width: 600px;
     height: 300px;
     display: block;
+}
+
+@media screen and (max-width: 750px) {
+    .slider {
+        width: 400px;
+        height: 200px;
+    }
+    .slide {
+        background-size: 100% 100%;
+    }
+    .slide-mini, .slide-mini>img {
+        width: 80px;
+        height: 45px;
+    }
+    .slides-mini {
+        left: -20px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .slider {
+        width: 300px;
+        height: 150px;
+    }
+    .slide {
+        background-size: 100% 100%;
+    }
+    .slide-mini, .slide-mini>img {
+        width: 60px;
+        height: 35px;
+    }
+    .slides-mini {
+        left: -7px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .slider {
+        width: 250px;
+        height: 125px;
+    }
+    .slide {
+        background-size: 100% 100%;
+    }
+    .slide-mini, .slide-mini>img {
+        width: 50px;
+        height: 30px;
+    }
+    .slides-mini {
+        left: -20px;
+    }
 }
