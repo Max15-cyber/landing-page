@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // slider
 const slide = document.querySelectorAll('.slide');
 const slides = document.getElementById('slides');
@@ -75,3 +96,23 @@ arrowPrev.addEventListener('click', showPrevSlide);
 toggleRadio.addEventListener('input', toggleSlide);
 slidesMini.addEventListener('click', toggleMiniSlide);
 
+
+// плавный скроллинг по странице
+const menu = document.getElementById('menu');
+
+
+function scrollingTransition(e) {
+    if(e.target.tagName === 'A' && e.target.id != 'home'){
+        e.preventDefault();
+        const blockId = e.target.getAttribute('href');
+        let id = document.querySelector(blockId)
+        id.scrollIntoView({
+            behavior:'smooth',
+            block:'start'
+        })
+    }
+
+}
+
+
+menu.addEventListener('click', scrollingTransition);
