@@ -1,22 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const modalForm = document.getElementById("modal-form");
+const pushForm = document.getElementById('push-form')
+function toggleModal() {
+    modalForm.classList.toggle("d-none")
+}
+pushForm.addEventListener('click', toggleModal)
 
 
 // slider
@@ -102,13 +89,16 @@ const menu = document.getElementById('menu');
 
 
 function scrollingTransition(e) {
-    if(e.target.tagName === 'A' && e.target.id != 'home'){
+    if (e.target.tagName === 'A' && e.target.id != 'home') {
+        for(let i = 0; i < parent.length; i++){
+            elem[i].className = 'elem'
+        }
         e.preventDefault();
         const blockId = e.target.getAttribute('href');
         let id = document.querySelector(blockId)
         id.scrollIntoView({
-            behavior:'smooth',
-            block:'start'
+            behavior: 'smooth',
+            block: 'start'
         })
     }
 
@@ -116,3 +106,29 @@ function scrollingTransition(e) {
 
 
 menu.addEventListener('click', scrollingTransition);
+
+
+
+// Появление элементов при скроллинге
+const parent = document.querySelectorAll('.parent');
+const elem = document.querySelectorAll('.parent>.elem');
+
+
+function isVisible(elem) {
+    let coords = elem.getBoundingClientRect();
+    let windowHeight = document.documentElement.clientHeight;
+    let topVisible = coords.top > 0 && coords.top < windowHeight;
+    let bottomVisible = coords.bottom > 0 && coords.bottom < windowHeight;
+    return topVisible && bottomVisible;
+}
+function showVisible() {
+    for (let i = 0; i < parent.length; i++) {
+        if (isVisible(parent[i])) {
+            elem[i].className = 'elem';
+        }
+    }
+
+}
+
+
+window.addEventListener('scroll', showVisible);

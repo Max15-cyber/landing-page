@@ -260,10 +260,6 @@ nav {
     justify-content: center;
 }
 
-.d-none {
-    display: none;
-}
-
 .form-login {
     position: relative;
     display: flex;
@@ -599,7 +595,7 @@ nav {
 .slider {
     width: 700px;
     height: 300px;
-    margin: 100px auto;
+    margin: 100px auto 200px;
 }
 
 .slider, .slides {
@@ -709,12 +705,6 @@ nav {
     box-shadow: 0 0 5px 5px rgb(255, 208, 0);
 }
 
-.hh {
-    width: 600px;
-    height: 300px;
-    display: block;
-}
-
 @media screen and (max-width: 768px) {
     .slider {
         width: 400px;
@@ -764,4 +754,16 @@ nav {
     .slides-mini {
         left: -20px;
     }
+}
+.d-none {
+    display: none;
+}
+.elem{
+    animation: slow-scale 2s 1;
+}
+@keyframes slow-scale{
+    0%{
+        opacity: 0;
+    }
+
 }
